@@ -28,7 +28,7 @@ class SnowPrestashop extends Module{
 
 		 if (!parent::install() ||
 		 	!$this->registerHook('displayHeader') ||
-		 	!$this->registerHook('displayHome')
+		 	!$this->registerHook('displayTop')
 		 	)
     			return false;
 
@@ -49,7 +49,7 @@ class SnowPrestashop extends Module{
 	}
 
 
-	public function hookDisplayHome($params){
+	public function hookDisplayTop($params){
 
 		global $smarty;
 		$content = '<canvas id="canvas"></canvas>' ;
@@ -65,6 +65,6 @@ class SnowPrestashop extends Module{
 	    $this->context->controller->addJS($this->_path.'snowprestashop.js', 'all');
 
 	}
-
+}
 
 ?>
