@@ -1,8 +1,7 @@
-INSTALL
-=======
+#INSTALL#
 
-Automatic
----------
+###Automatic###
+
 This is the easiest method, but it may not work in certain cases. If it does not work, use the manual installation method presented further below.
 
 1. In the modules tab, click on add a new module.
@@ -18,8 +17,8 @@ This means that the PHP extension php_zip is not installed on your serve. You wi
 The module will then appear in your list of modules under the Module tab.
 4. Click on the install button to install the module.
 
-Manual
-------
+###Manual###
+
 1. Extract the downloaded file (.ZIP)
 2. Open the extracted. Copy snowprestashop directory to Prestashop-root-directory/modules via FTP
 3. Notice: The directory that you copy: includes a file named snowprestashop.php and does not have any other snowprestashop directory.
@@ -28,8 +27,7 @@ Manual
 Thats all
 
 
-Credit
-======
+#Credit#
 Developed for Prestashop: by [Gianluca Barranca](www.gianlucabarranca.it)
 
 Tutorial : by [Kirupa](http://www.kirupa.com/html5/the_falling_snow_effect.htm)
