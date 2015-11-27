@@ -8,8 +8,6 @@ if (!defined('_CAN_LOAD_FILES_'))
 	exit;
 
 class SnowPrestashop extends Module{
-	private $_html = '';
-	private $_postErrors = array();
 
 	function __construct(){
 		$this->name = 'snowprestashop';
@@ -21,7 +19,7 @@ class SnowPrestashop extends Module{
 		parent::__construct();
 
 		$this->displayName = $this->l('Add an effect Christmas to your site ');
-		$this->description = $this->l('A canvas snow effect for prestashop ');
+		$this->description = $this->l('A snow effect for prestashop ');
 	}
 
 	function install(){
@@ -48,11 +46,10 @@ class SnowPrestashop extends Module{
 		//here your code
 	}
 
-
 	public function hookDisplayTop($params){
 
 		global $smarty;
-		$content = '<canvas id="canvas"></canvas>' ;
+		$content = '<div id="snowflakeContainer"><p class="snowflake">*</p></div>' ;
 		$smarty->assign(array(
 		'content' => $content,
 		));
@@ -62,9 +59,8 @@ class SnowPrestashop extends Module{
 
 	public function hookDisplayHeader($params){
 	    $this->context->controller->addCSS($this->_path.'snowprestashop.css', 'all');
-	    $this->context->controller->addJS($this->_path.'snowprestashop.js', 'all');
+
 
 	}
 }
-
 ?>

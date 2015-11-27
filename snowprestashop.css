@@ -3,8 +3,29 @@
 
 body {
 	/*You can use any kind of background here.*/
-	background: #6b92b9;
-}
+	/*background: #6b92b9;
+*/}
+/*
 canvas {
 	display: block;
+	z-index: 99;
+}*/
+
+#snowflakeContainer {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.snowflake {
+    padding-left: 15px;
+    font-family: Cambria, Georgia, serif;
+    font-size: 14px;
+    line-height: 24px;
+    position: fixed;
+    color: #6b92b9;
+    user-select: none;
+    z-index: 1000;
+}
+.snowflake:hover {
+    cursor: default;
 }

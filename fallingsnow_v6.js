@@ -1,15 +1,15 @@
-// The star of every good animation
-var requestAnimationFrame = window.requestAnimationFrame ||
-                            window.mozRequestAnimationFrame ||
+﻿// The star of every good animation
+var requestAnimationFrame = window.requestAnimationFrame || 
+                            window.mozRequestAnimationFrame || 
                             window.webkitRequestAnimationFrame ||
                             window.msRequestAnimationFrame;
 
-var transforms = ["transform",
-                  "msTransform",
-                  "webkitTransform",
-                  "mozTransform",
+var transforms = ["transform", 
+                  "msTransform", 
+                  "webkitTransform", 
+                  "mozTransform", 
                   "oTransform"];
-
+                   
 var transformProperty = getSupportedPropertyName(transforms);
 
 // Array to store our Snowflake objects
@@ -57,11 +57,11 @@ function Snowflake(element, radius, speed, xPos, yPos) {
     this.speed = speed;
     this.xPos = xPos;
     this.yPos = yPos;
-
+	
 	// declare variables used for snowflake's motion
     this.counter = 0;
     this.sign = Math.random() < 0.5 ? 1 : -1;
-
+	
 	// setting an initial opacity and size for our snowflake
     this.element.style.opacity = .1 + Math.random();
     this.element.style.fontSize = 12 + Math.random() * 50 + "px";
@@ -79,7 +79,7 @@ Snowflake.prototype.update = function () {
 
 	// setting our snowflake's position
     setTranslate3DTransform(this.element, Math.round(this.xPos), Math.round(this.yPos));
-
+    
     // if snowflake goes below the browser window, move it back to the top
     if (this.yPos > browserHeight) {
     	this.yPos = -50;
@@ -98,20 +98,20 @@ function setTranslate3DTransform(element, xPosition, yPosition) {
 // The function responsible for creating the snowflake
 //
 function generateSnowflakes() {
-
+	
 	// get our snowflake element from the DOM and store it
     var originalSnowflake = document.querySelector(".snowflake");
-
+    
     // access our snowflake element's parent container
     var snowflakeContainer = originalSnowflake.parentNode;
-
+    
     // get our browser's size
 	browserWidth = document.documentElement.clientWidth;
     browserHeight = document.documentElement.clientHeight;
-
+	        
     // create each individual snowflake
     for (var i = 0; i < numberOfSnowflakes; i++) {
-
+    
     	// clone our original snowflake and add it to snowflakeContainer
         var snowflakeCopy = originalSnowflake.cloneNode(true);
         snowflakeContainer.appendChild(snowflakeCopy);
@@ -121,19 +121,19 @@ function generateSnowflakes() {
         var initialYPos = getPosition(50, browserHeight);
         var speed = 5+Math.random()*40;
         var radius = 4+Math.random()*10;
-
+        
         // create our Snowflake object
-        var snowflakeObject = new Snowflake(snowflakeCopy,
-        									radius,
-        									speed,
-        									initialXPos,
+        var snowflakeObject = new Snowflake(snowflakeCopy, 
+        									radius, 
+        									speed, 
+        									initialXPos, 
         									initialYPos);
         snowflakes.push(snowflakeObject);
     }
-
+    
     // remove the original snowflake because we no longer need it visible
 	snowflakeContainer.removeChild(originalSnowflake);
-
+	
 	// call the moveSnowflakes function every 30 milliseconds
     moveSnowflakes();
 }
@@ -146,22 +146,22 @@ function moveSnowflakes() {
         var snowflake = snowflakes[i];
         snowflake.update();
     }
-
+    
 	// Reset the position of all the snowflakes to a new value
     if (resetPosition) {
     	browserWidth = document.documentElement.clientWidth;
-	    browserHeight = document.documentElement.clientHeight;
-
+	    browserHeight = document.documentElement.clientHeight; 
+	    
 		for (var i = 0; i < snowflakes.length; i++) {
 	        var snowflake = snowflakes[i];
-
+	        
 	        snowflake.xPos = getPosition(50, browserWidth);
 	        snowflake.yPos = getPosition(50, browserHeight);
 	    }
-
+	    
 	    resetPosition = false;
     }
-
+    
     requestAnimationFrame(moveSnowflakes);
 }
 
