@@ -8,6 +8,7 @@ This is the easiest method, but it may not work in certain cases. If it does not
 1. In the modules tab, click on add a new module.
 
 2. If a file of the module exists online, specify its URL in the Module URL field and then click on Download this module.
+
 	2.1 If the file is on your computer, click on Browse to open the dialogue box letting you search your computer, select the file then validate the dialogue box. Finally click on Upload this module.
 
 If the following error message appears:
@@ -30,4 +31,5 @@ Thats all
 Credit
 ======
 Developed for Prestashop: by [Gianluca Barranca](www.gianlucabarranca.it)
+
 Tutorial : by [Kirupa](http://www.kirupa.com/html5/the_falling_snow_effect.htm)
