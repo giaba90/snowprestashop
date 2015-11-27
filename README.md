@@ -8,7 +8,7 @@ This is the easiest method, but it may not work in certain cases. If it does not
 1. In the modules tab, click on add a new module.
 
 2. If a file of the module exists online, specify its URL in the Module URL field and then click on Download this module.
-2.1 If the file is on your computer, click on Browse to open the dialogue box letting you search your computer, select the file then validate the dialogue box. Finally click on Upload this module.
+	2.1 If the file is on your computer, click on Browse to open the dialogue box letting you search your computer, select the file then validate the dialogue box. Finally click on Upload this module.
 
 If the following error message appears:
 This means that the PHP extension php_zip is not installed on your serve. You will need to install it or have it installed by your webhost.
