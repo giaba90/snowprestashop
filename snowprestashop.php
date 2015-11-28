@@ -50,8 +50,10 @@ class SnowPrestashop extends Module{
 
 		global $smarty;
 		$content = '<div id="snowflakeContainer"><p class="snowflake">*</p></div>' ;
+		$urljs = $this->_path.'snowprestashop.js';
 		$smarty->assign(array(
 		'content' => $content,
+		'url' => $urljs
 		));
 
 		return $this->display(__FILE__, 'snowprestashop.tpl');
